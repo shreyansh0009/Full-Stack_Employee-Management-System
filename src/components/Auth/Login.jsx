@@ -36,7 +36,7 @@ const Login = () => {
             required type="password" placeholder='Enter Your Password'
             className='border-2 border-white rounded-lg text-2xl m-3 p-3'/>
 
-            <button className='bg-green-400 w-28 h-12 rounded-lg overflow-hidden mt-3'>Login</button>
+            <button className='bg-green-400 w-[335px] h-12 rounded-lg overflow-hidden mt-3 cursor-pointer'>Login</button>
             </form>
 
         </div>
