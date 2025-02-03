@@ -12,7 +12,7 @@ createRoot(document.getElementById('root')).render(
 
     <AuthContext> 
        <TaskContext>
-        <App />
+         <App />
        </TaskContext>
     </AuthContext>
     
