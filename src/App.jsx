@@ -7,9 +7,7 @@ import { AuthContext } from './context/AuthProvider'
 
 function App() {
 
-  // useEffect(() => {
-  //   getLocalStorage()
-  // },)
+  setLocalStorage();
 
   const [user, setuser] = useState(null)
 
