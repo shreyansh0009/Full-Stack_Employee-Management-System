@@ -8,22 +8,21 @@ import { AuthContext } from './context/AuthProvider'
 function App() {
 
   setLocalStorage();
+  getLocalStorage();
 
   const [user, setuser] = useState(null)
+  const authData = useContext(AuthContext)
 
-  const handleLogin = (email, passowrd) => {
-    if(email == 'admin@me.com' && passowrd == 123) {
+  const handleLogin = (email, password) => {
+    if(authData && authData.admin.find((e) => email == e.email && e.password == password)) {
       setuser('admin')      
-    } else if(email == 'user@me.com' && passowrd == 123) {
+    } else if(authData && authData.employees.find((e) => email == e.email && e.password == password)) {
       setuser('employee')
     } else {
       alert("Invalid Credentials!")
       
     }
   }
-
-  const data = useContext(AuthContext)
-  console.log(data);
   
   
   return (
