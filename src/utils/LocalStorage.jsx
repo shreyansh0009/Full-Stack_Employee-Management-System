@@ -1,10 +1,11 @@
-localStorage.clear()
+
 const employees = [
   {
     id: 1,
     firstName: "Aarav", // Indian name
     email: "employee1@example.com",
     password: "000",
+    role: "employee", // Add role property
     tasks: [
       {
         active: true,
@@ -49,6 +50,7 @@ const employees = [
     firstName: "Ishaan", // Indian name
     email: "employee2@example.com",
     password: "000",
+    role: "employee", // Add role property
     tasks: [
       {
         active: true,
@@ -103,6 +105,7 @@ const employees = [
     firstName: "Ananya", // Indian name
     email: "employee3@example.com",
     password: "000",
+    role: "employee", // Add role property
     tasks: [
       {
         active: true,
@@ -147,6 +150,7 @@ const employees = [
     firstName: "Vihaan", // Indian name
     email: "employee4@example.com",
     password: "000",
+    role: "employee", // Add role property
     tasks: [
       {
         active: true,
@@ -201,6 +205,7 @@ const employees = [
     firstName: "Saanvi", // Indian name
     email: "employee5@example.com",
     password: "000",
+    role: "employee", // Add role property
     tasks: [
       {
         active: true,
@@ -251,15 +256,16 @@ const employees = [
     }
   }
 ];
-  
-  const admin = [
-    {
-      id: 100,
-      firstName: "Saurabh", 
-      email: "admin@example.com",
-      password: "000"
-    }
-  ]
+
+const admin = [
+  {
+    id: 100,
+    firstName: "Saurabh",
+    email: "admin@example.com",
+    password: "000",
+    role: "admin" 
+  }
+];
 
   export const setLocalStorage = () => {
 

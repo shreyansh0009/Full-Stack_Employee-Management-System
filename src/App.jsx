@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Login from './components/Auth/Login';
 import Employee from './components/Dashboard/Employee';
 import Admin from './components/Dashboard/Admin';
@@ -13,13 +13,21 @@ function App() {
   const [loggedInUserData, setLoggedInUserData] = useState(null);
   const authData = useContext(AuthContext);
 
+  useEffect(() => {
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (loggedInUser) {
+      setUser(loggedInUser.role); 
+      setLoggedInUserData(loggedInUser.data); 
+    }
+  }, []);
+
   const handleLogin = (email, password) => {
     if (authData) {
       const admin = authData.admin.find((e) => email === e.email && e.password === password);
       if (admin) {
         setUser('admin');
         setLoggedInUserData(admin);
-        localStorage.setItem('loggedInUser', JSON.stringify({ role: 'admin'}));
+        localStorage.setItem('loggedInUser', JSON.stringify({ role: 'admin', data: admin}));
         return;
       }
 
@@ -27,7 +35,7 @@ function App() {
       if (employee) {
         setUser('employee');
         setLoggedInUserData(employee);
-        localStorage.setItem('loggedInUser', JSON.stringify({ role: 'employee'}));
+        localStorage.setItem('loggedInUser', JSON.stringify({ role: 'employee', data: employee}));
         return;
       }
     }
@@ -35,12 +43,22 @@ function App() {
     alert("Invalid Credentials!");
   };
 
+  const handleLogout = () => {
+    setUser(null); 
+    setLoggedInUserData(null); 
+    localStorage.removeItem('loggedInUser'); 
+  };
+
   return (
     <div>
-      {!user ? <Login handleLogin={handleLogin} /> : ''}
-      {user === 'admin' ? <Admin data = {loggedInUserData}/> : (user === 'employee' ? <Employee data = {loggedInUserData}/> : null)}
+      {!user ? (
+        <Login handleLogin={handleLogin} />
+      ) : user === 'admin' ? (
+        <Admin data={loggedInUserData} handleLogout={handleLogout} />
+      ) : (
+        <Employee data={loggedInUserData} handleLogout={handleLogout} />
+      )}
     </div>
   );
 }
-
 export default App;
