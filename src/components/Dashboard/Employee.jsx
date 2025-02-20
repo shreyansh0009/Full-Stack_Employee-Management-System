@@ -3,12 +3,12 @@ import Header from '../../others/Header'
 import Tasks from '../../others/Tasks'
 import TaskList from '../Tasklist/TaskList'
 
-const Employee = () => {
+const Employee = ({data}) => {
   return (
     <div className='h-screen bg-black'>
-      <Header />
-      <Tasks />
-      <TaskList />
+      <Header data = {data}/>
+      <Tasks data = {data}/>
+      <TaskList data = {data}/>
     </div>
 
   )

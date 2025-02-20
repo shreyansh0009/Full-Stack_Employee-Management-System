@@ -38,7 +38,7 @@ function App() {
   return (
     <div>
       {!user ? <Login handleLogin={handleLogin} /> : ''}
-      {user === 'admin' ? <Admin /> : user === 'employee' ? <Employee /> : ''}
+      {user === 'admin' ? <Admin data = {loggedInUserData}/> : (user === 'employee' ? <Employee data = {loggedInUserData}/> : null)}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Tasks = () => {
+const Tasks = ({data}) => {
   return (
     <div className='flex justify-between gap-4 p-7'>
 
