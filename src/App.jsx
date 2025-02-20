@@ -19,8 +19,7 @@ function App() {
     } else if(authData && authData.employees.find((e) => email == e.email && e.password == password)) {
       setuser('employee')
     } else {
-      alert("Invalid Credentials!")
-      
+      alert("Invalid Credentials!") 
     }
   }
   
