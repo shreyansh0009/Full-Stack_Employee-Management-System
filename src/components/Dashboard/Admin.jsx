@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../others/Header";
 import CreateTask from "../../others/CreateTask";
+import AllTask from "../../others/AllTask";
 
 const Admin = ({ data, handleLogout }) => {
   return (
@@ -13,6 +14,7 @@ const Admin = ({ data, handleLogout }) => {
         <div className="text-white mt-10 text-xl font-semibold bg-zinc-600 flex items-center justify-between">
           <CreateTask />
         </div>
+        <AllTask />
       </div>
     </>
   );
