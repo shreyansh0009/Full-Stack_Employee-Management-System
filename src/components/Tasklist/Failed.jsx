@@ -1,20 +1,19 @@
 import React from "react";
 
-const Failed = () => {
+const Failed = ({data}) => {
   return (
     <div className="h-full w-[30%] rounded-xl shrink-0 bg-red-300">
       <div className="flex justify-between p-5">
         <h3 className="font-semibold bg-emerald-500 p-1 px-5 rounded-md">
-          Low
+        {data.taskCategory}
         </h3>
-        <h3 className="font-semibold">27 Jan 2025</h3>
+        <h3 className="font-semibold">{data.taskDate}</h3>
       </div>
 
       <div className="px-5">
-        <h1 className="font-bold text-3xl mb-3">Machine Learning File!</h1>
+        <h1 className="font-bold text-3xl mb-3">{data.taskTitle}</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, nam?
-          Numquam ex voluptas delectus architecto.
+        {data.taskDescription}
         </p>
       </div>
 
