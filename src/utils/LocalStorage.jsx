@@ -1,4 +1,3 @@
-
 const employees = [
   {
     id: 1,
@@ -15,7 +14,7 @@ const employees = [
         taskTitle: "Design Homepage",
         taskDescription: "Create a responsive homepage design.",
         taskDate: "2023-10-15",
-        taskCategory: "Design"
+        taskCategory: "Design",
       },
       {
         active: false,
@@ -25,7 +24,7 @@ const employees = [
         taskTitle: "Fix Login Bug",
         taskDescription: "Resolve the login authentication issue.",
         taskDate: "2023-10-10",
-        taskCategory: "Development"
+        taskCategory: "Development",
       },
       {
         active: true,
@@ -35,15 +34,15 @@ const employees = [
         taskTitle: "Write API Documentation",
         taskDescription: "Document the new API endpoints.",
         taskDate: "2023-10-20",
-        taskCategory: "Documentation"
-      }
+        taskCategory: "Documentation",
+      },
     ],
     taskNumber: {
       active: 2, // Count of active tasks
       newTask: 1, // Count of new tasks
       completed: 1, // Count of completed tasks
-      failed: 1 // Count of failed tasks
-    }
+      failed: 1, // Count of failed tasks
+    },
   },
   {
     id: 2,
@@ -60,7 +59,7 @@ const employees = [
         taskTitle: "Optimize Database",
         taskDescription: "Improve database query performance.",
         taskDate: "2023-10-18",
-        taskCategory: "Database"
+        taskCategory: "Database",
       },
       {
         active: true,
@@ -70,7 +69,7 @@ const employees = [
         taskTitle: "Create User Dashboard",
         taskDescription: "Develop a user-friendly dashboard.",
         taskDate: "2023-10-22",
-        taskCategory: "Development"
+        taskCategory: "Development",
       },
       {
         active: false,
@@ -80,7 +79,7 @@ const employees = [
         taskTitle: "Test Payment Gateway",
         taskDescription: "Ensure the payment gateway works seamlessly.",
         taskDate: "2023-10-12",
-        taskCategory: "Testing"
+        taskCategory: "Testing",
       },
       {
         active: true,
@@ -90,15 +89,15 @@ const employees = [
         taskTitle: "Update Security Policies",
         taskDescription: "Revise and update company security policies.",
         taskDate: "2023-10-25",
-        taskCategory: "Security"
-      }
+        taskCategory: "Security",
+      },
     ],
     taskNumber: {
       active: 3,
       newTask: 1,
       completed: 1,
-      failed: 1
-    }
+      failed: 1,
+    },
   },
   {
     id: 3,
@@ -115,7 +114,7 @@ const employees = [
         taskTitle: "Develop Mobile App",
         taskDescription: "Start development of the new mobile app.",
         taskDate: "2023-10-30",
-        taskCategory: "Development"
+        taskCategory: "Development",
       },
       {
         active: false,
@@ -125,7 +124,7 @@ const employees = [
         taskTitle: "Conduct User Research",
         taskDescription: "Gather feedback from users for improvements.",
         taskDate: "2023-10-05",
-        taskCategory: "Research"
+        taskCategory: "Research",
       },
       {
         active: true,
@@ -135,15 +134,15 @@ const employees = [
         taskTitle: "Write Unit Tests",
         taskDescription: "Create unit tests for the new features.",
         taskDate: "2023-10-28",
-        taskCategory: "Testing"
-      }
+        taskCategory: "Testing",
+      },
     ],
     taskNumber: {
       active: 2,
       newTask: 1,
       completed: 1,
-      failed: 0
-    }
+      failed: 0,
+    },
   },
   {
     id: 4,
@@ -160,7 +159,7 @@ const employees = [
         taskTitle: "Deploy New Server",
         taskDescription: "Set up and deploy the new production server.",
         taskDate: "2023-10-17",
-        taskCategory: "DevOps"
+        taskCategory: "DevOps",
       },
       {
         active: true,
@@ -170,7 +169,7 @@ const employees = [
         taskTitle: "Create Marketing Campaign",
         taskDescription: "Plan and execute the Q4 marketing campaign.",
         taskDate: "2023-10-23",
-        taskCategory: "Marketing"
+        taskCategory: "Marketing",
       },
       {
         active: false,
@@ -180,7 +179,7 @@ const employees = [
         taskTitle: "Update Employee Handbook",
         taskDescription: "Revise the employee handbook for 2024.",
         taskDate: "2023-10-08",
-        taskCategory: "HR"
+        taskCategory: "HR",
       },
       {
         active: true,
@@ -190,15 +189,15 @@ const employees = [
         taskTitle: "Fix UI Bugs",
         taskDescription: "Resolve UI issues reported by users.",
         taskDate: "2023-10-19",
-        taskCategory: "Design"
-      }
+        taskCategory: "Design",
+      },
     ],
     taskNumber: {
       active: 3,
       newTask: 1,
       completed: 1,
-      failed: 1
-    }
+      failed: 1,
+    },
   },
   {
     id: 5,
@@ -215,7 +214,7 @@ const employees = [
         taskTitle: "Implement Analytics",
         taskDescription: "Integrate analytics into the application.",
         taskDate: "2023-10-27",
-        taskCategory: "Development"
+        taskCategory: "Development",
       },
       {
         active: false,
@@ -225,7 +224,7 @@ const employees = [
         taskTitle: "Conduct Security Audit",
         taskDescription: "Perform a full security audit of the system.",
         taskDate: "2023-10-14",
-        taskCategory: "Security"
+        taskCategory: "Security",
       },
       {
         active: true,
@@ -235,7 +234,7 @@ const employees = [
         taskTitle: "Prepare Quarterly Report",
         taskDescription: "Compile data for the quarterly financial report.",
         taskDate: "2023-10-31",
-        taskCategory: "Finance"
+        taskCategory: "Finance",
       },
       {
         active: true,
@@ -245,16 +244,16 @@ const employees = [
         taskTitle: "Train New Employees",
         taskDescription: "Conduct onboarding sessions for new hires.",
         taskDate: "2023-10-21",
-        taskCategory: "HR"
-      }
+        taskCategory: "HR",
+      },
     ],
     taskNumber: {
       active: 3,
       newTask: 1,
       completed: 1,
-      failed: 1
-    }
-  }
+      failed: 1,
+    },
+  },
 ];
 
 const admin = [
@@ -263,21 +262,18 @@ const admin = [
     firstName: "Saurabh",
     email: "admin@me.com",
     password: "000",
-    role: "admin" 
-  }
+    role: "admin",
+  },
 ];
 
-  export const setLocalStorage = () => {
+export const setLocalStorage = () => {
+  localStorage.setItem("employees", JSON.stringify(employees));
+  localStorage.setItem("admin", JSON.stringify(admin));
+};
 
-    localStorage.setItem('employees', JSON.stringify(employees))
-    localStorage.setItem('admin', JSON.stringify(admin))
+export const getLocalStorage = () => {
+  const employees = JSON.parse(localStorage.getItem("employees"));
+  const admin = JSON.parse(localStorage.getItem("admin"));
 
-  }
-
-  export const getLocalStorage = () => {
-
-    const employees = JSON.parse(localStorage.getItem('employees'))
-    const admin = JSON.parse(localStorage.getItem('admin'))
-
-    return {employees, admin}
-  }
+  return { employees, admin };
+};
