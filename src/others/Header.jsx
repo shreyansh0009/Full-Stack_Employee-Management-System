@@ -4,7 +4,7 @@ import Tasks from './Tasks'
 const Header = ({data, handleLogout}) => {
   return (
     <>
-      <div className='w-screen h-22'>
+      <div className='w-screen h-22 mb-5'>
 
         <div className='w-screen h-38 p-8 flex items-end justify-between font-bold text-white'>
 
