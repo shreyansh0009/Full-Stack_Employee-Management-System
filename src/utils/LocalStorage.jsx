@@ -194,7 +194,7 @@ const employees = [
     ],
     taskNumber: {
       active: 3,
-      newTask: 1,
+      newTask: 2,
       completed: 1,
       failed: 1,
     },
