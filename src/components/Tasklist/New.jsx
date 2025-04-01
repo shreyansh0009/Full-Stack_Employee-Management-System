@@ -1,6 +1,6 @@
 import React from "react";
 
-const New = () => {
+const New = ({data}) => {
   return (
     <div className="h-full w-[30%] rounded-xl shrink-0 bg-green-300">
       <div className="flex justify-between p-5">
