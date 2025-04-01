@@ -7,84 +7,48 @@ const CreateTask = () => {
   const [taskCategory, settaskCategory] = useState("");
   const [taskDescription, settaskDescription] = useState("");
 
-
   const submitHandler = (e) => {
     e.preventDefault();
-  
-    // Load existing employees
-    let employees = JSON.parse(localStorage.getItem("employees")) || [];
-  
-    // Find employee and update their tasks
-    let employeeFound = false;
-    employees = employees.map((employee) => {
-      if (employee.firstName.toLowerCase() === taskAssignedTo.toLowerCase()) {
-        employee.tasks.push({
-          taskTitle,
-          taskDate,
-          taskCategory,
-          taskDescription,
-          active: true,
-        });
-        employeeFound = true;
+
+    const newTask = {
+      taskTitle,
+      taskDate,
+      taskCategory,
+      taskDescription,
+      active: true,
+      newTask: true,
+      completed: false,
+      failed: false,
+    };
+
+    let flag = false;
+    const data = JSON.parse(localStorage.getItem("employees"));
+
+    data.forEach(function (e) {
+      if (taskAssignedTo.trim().toLowerCase() === e.firstName.toLowerCase()) {
+        e.tasks.push(newTask);
+        e.taskNumber.active += 1;
+        e.taskNumber.newTask += 1;
+        flag = true;
       }
-      return employee;
     });
-  
-    if (!employeeFound) {
-      alert("Employee not found!");
+
+    if (!flag) {
+      alert("Employee not found! Enter name correctly.");
       return;
     }
-  
-    // Save back to localStorage
-    localStorage.setItem("employees", JSON.stringify(employees));
-  
-    // Notify all components
+
+    localStorage.setItem("employees", JSON.stringify(data));
+    console.log("Updated Employees: ", data);
+
+    settaskAssignedTo("");
+    settaskCategory("");
+    settaskDate("");
+    settaskDescription("");
+    settaskTitle("");
+
     window.dispatchEvent(new Event("taskUpdated"));
   };
-  
-
-  // const submitHandler = (e) => {
-  //   e.preventDefault();
-
-  //   const newTask = {
-  //     taskTitle,
-  //     taskDate,
-  //     taskCategory,
-  //     taskDescription,
-  //     active: true,
-  //     newTask: true,
-  //     completed: false,
-  //     failed: false,
-  //   };
-
-  //   let flag = false;
-  //   const data = JSON.parse(localStorage.getItem("employees"));
-
-  //   data.forEach(function (e) {
-  //     if (taskAssignedTo.trim().toLowerCase() === e.firstName.toLowerCase()) {
-  //       e.tasks.push(newTask);
-  //       e.taskNumber.active += 1;
-  //       e.taskNumber.newTask += 1;
-  //       flag = true;
-  //     }
-  //   });
-
-  //   if (!flag) {
-  //     alert("Employee not found! Enter name correctly.");
-  //     return;
-  //   }
-
-  //   localStorage.setItem("employees", JSON.stringify(data));
-  //   console.log("Updated Employees: ", data);
-
-  //   settaskAssignedTo("");
-  //   settaskCategory("");
-  //   settaskDate("");
-  //   settaskDescription("");
-  //   settaskTitle("");
-
-  //   window.dispatchEvent(new Event("taskUpdated"));
-  // };
 
   return (
     <div className="w-full mt-10 mb-10">
