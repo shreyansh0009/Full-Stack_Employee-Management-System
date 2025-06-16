@@ -267,8 +267,17 @@ const admin = [
 ];
 
 export const setLocalStorage = () => {
-  localStorage.setItem("employees", JSON.stringify(employees));
-  localStorage.setItem("admin", JSON.stringify(admin));
+  const existingEmployees = localStorage.getItem("employees");
+  const existingAdmin = localStorage.getItem("admin");
+
+  // Only set dummy data if not already present
+  if (!existingEmployees) {
+    localStorage.setItem("employees", JSON.stringify(employees));
+  }
+
+  if (!existingAdmin) {
+    localStorage.setItem("admin", JSON.stringify(admin));
+  }
 };
 
 export const getLocalStorage = () => {
